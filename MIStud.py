@@ -63,8 +63,9 @@ def startgame(players):
 	topend=(players*2)-1
 	
 	count =0
-	playerbet=[]
+	playerbet=[] #should be a global variable, since this will need to be accessed by many parts
 	for i in range(0,players):
+		
 		player=str(i+1)
 		print("Player " + player + " Your cards are: \n")
 		
@@ -74,7 +75,9 @@ def startgame(players):
 		answer = "sure"
 		ante = str(raw_input("Player"+player+" Would you like to ante?"))
 		if ante == answer:
-			playerbet[i]=int(raw_input("What would you like to bet? (5, 10, or  15)"))
+			
+			playerbet.append(int(raw_input("What would you like to bet? (5, 10, or  15)")))
+			print(playerbet)
 		else:
 			print("Thanks for playing!")
 	
